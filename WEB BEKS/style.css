@@ -1,64 +1,81 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-body{
+body {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   background: #222;
 }
-.box{
+.box {
   position: relative;
   width: 400px;
   height: 300px;
 }
-.box::before{
-  content: '';
+.box::before {
+  content: "";
   position: absolute;
   inset: 0;
-  background: repeating-conic-gradient(from var(--a), #0f0, #ff0, #0ff, #f0f, #0ff);
+  background: repeating-conic-gradient(
+    from var(--a),
+    #0f0,
+    #ff0,
+    #0ff,
+    #f0f,
+    #0ff
+  );
   border-radius: 20px;
   animation: rotating 4s linear infinite;
 }
-.box::after{
-  content: '';
+.box::after {
+  content: "";
   position: absolute;
   inset: 0;
-  background: repeating-conic-gradient(from var(--a), #0f0, #ff0, #0ff, #f0f, #0ff);
+  background: repeating-conic-gradient(
+    from var(--a),
+    #0f0,
+    #ff0,
+    #0ff,
+    #f0f,
+    #0ff
+  );
   border-radius: 20px;
   animation: rotating 4s linear infinite;
   filter: blur(40px);
   opacity: 0.75;
 }
-.box span{
+.box span {
   position: absolute;
   inset: 4px;
   background: #222;
   border-radius: 16px;
   z-index: 1;
 }
-@property --a{
-  syntax: '<angle>';
+@property --a {
+  syntax: "<angle>";
   inherits: false;
   initial-value: 0deg;
 }
-@keyframes rotating{
-  0%
-  {
+@keyframes rotating {
+  0% {
     --a: 0deg;
   }
-  100%
-  {
+  100% {
     --a: 360deg;
   }
 }
-.box .box{
+.box .box {
   position: absolute;
   inset: 0 -50px;
   top: 75px;
   height: 150px;
   width: 500px;
+}
+.box h1 {
+  color: rgb(235, 231, 227);
+  font-size: 20px;
+  text-align: center;
 }
